@@ -13,7 +13,7 @@ const NavLinks = [
 function Navbar() {
   const [isMobOpen, setisMobOpen] = useState(false)
   return (
-    <header className='fixed top-0 left-0 right-0 bg-transparent py-5'>
+    <header className='fixed top-0 left-0 right-0 bg-transparent py-5 z-50'>
       <nav className='container mx-auto px-6 flex items-center justify-between'>
         <a href='#' className='text-xl text-[#CBFE00] tracking-tight font-electrolize font-bold hover:text-white'>
           &lt;&gt;<span className='font-tiny5 text-white text-2xl hover:text-[#CBFE00]'>Musfique</span>&lt;/&gt;
