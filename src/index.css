@@ -82,6 +82,28 @@
     }
   }
 
+
+  @keyframes scan {
+    0% {
+      top: -20%;
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      top: 120%;
+      opacity: 0;
+    }
+  }
+
+  .animate-scan {
+    animation: scan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
   
 
   @keyframes slow-drift {
@@ -128,7 +150,7 @@
   }
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 20s linear infinite;
   }
 
   .animation-delay-100 {
