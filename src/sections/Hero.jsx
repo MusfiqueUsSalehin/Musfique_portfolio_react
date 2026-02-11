@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react'
 import Button from '../components/Button.jsx'
 import { AnimatedBorderButton } from '../components/AnimatedBorderButton.jsx'
-import { Download, ArrowRight } from 'lucide-react'
+import { Download, ArrowRight, Github, Linkedin, Facebook } from 'lucide-react'
+import { IKImage } from 'imagekitio-react';
 
 const Hero = () => {
   // 1. Generate the dot data once and "freeze" it in memory
@@ -14,6 +15,8 @@ const Hero = () => {
       delay: Math.random() * 5,
     }));
   }, []); // Empty dependency array means "only run this once"
+
+  const urlEndpoint = "https://ik.imagekit.io/pft5wq5du";
 
   return (
     <section className='relative min-h-screen flex items-center overflow-hidden '>
@@ -89,14 +92,49 @@ const Hero = () => {
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
+              <div className="h-12 w-1 bg-[#CBFE00] relative">
+                    
+                </div>
+              
+              <div className='flex items-center gap-4'>
+                {[
+                  {icon: Github, href: "https://github.com/MusfiqueUsSalehin"},
+                  {icon: Linkedin, href: "https://www.linkedin.com/in/musfique-us-salehin/"},
+                  {icon: Facebook, href: "#"}
+                ].map((social, index) => (
+                  <div key={index} className="hover:scale-150 transition-transform duration-200">
+                    <a key={index} href={social.href}>
+                      {<social.icon className="w-6 h-6 text-gray-400 hover:text-[#CBFE00] transition-colors duration-200" />}
+                    </a>
+                  </div>
+                  ))}
+              </div>
             </div>
 
 
           </div>
           {/* right column */}
-          <div>
-            <div>
-
+          <div className='relative animate-fade-in animation-delay-200'>
+            {/*profile Image*/}
+            <div className='relative max-w-md mx-auto'>
+              <div className='relative glass rounded-3xl p-2 glow-border'>
+                
+                {/* 2. Replace the standard <img> with <IKImage> */}
+                <IKImage
+                  urlEndpoint={urlEndpoint}
+                  path="/IMG-20260208-WA0129 (5).jpg.jpeg" // The name of the file in ImageKit
+                  transformation={[{
+                    height: 650, // Fetch a reasonably sized image, not the full 4k original
+                    width: 500,
+                    quality: 80, // Reduces file size without visible loss
+                  }]}
+                  lqip={{ active: true }} // Optional: Shows a blurred placeholder while loading
+                  loading="lazy"
+                  alt="Profile Image"
+                  className="rounded-3xl hover:scale-105 transition-transform duration-500"
+                />
+a
+              </div>
             </div>
           </div>
 
