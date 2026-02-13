@@ -1,18 +1,12 @@
-import { Code2, Lightbulb, Rocket, Users } from 'lucide-react'
+import { Brain, Code2, Layers, Lightbulb, RefreshCw, Rocket, ShieldCheck, Users, Zap } from 'lucide-react'
 import React from 'react'
 
 
 
 const highlights= [
     {
-      icon: Code2,
-      title: 'Clean Code',
-      description: 'I write clean, efficient, and maintainable code that follows best practices and industry standards.'
-
-    },
-    {
       icon: Rocket,
-      title: 'Passionate Coder',
+      title: 'Passionate Programmer',
       description: 'I am passionate about coding and always eager to learn new technologies and improve my skills.'
     },
 
@@ -26,7 +20,26 @@ const highlights= [
       icon: Lightbulb,
       title: 'Problem Solver',
       description: 'I have a strong problem-solving mindset and enjoy tackling complex challenges to find innovative solutions.'
-    }
+    },
+
+    {
+      icon: Zap, // Represents speed/energy
+      title: 'Performance Optimized',
+      description: 'I build fast, responsive applications, prioritizing low latency and seamless user experiences.'
+    },
+
+    {
+      icon: RefreshCw, // Represents cycles/agile
+      title: 'Agile Mindset',
+      description: 'I thrive in agile environments, adapting quickly to changes and delivering value through iterative development.'
+    },
+
+
+    {
+      icon: ShieldCheck, // Represents security
+      title: 'Security Conscious',
+      description: 'I write code with security in mind, implementing best practices to protect data and prevent vulnerabilities.'
+    },
   ]
 
 const About = () => {
@@ -50,8 +63,8 @@ const About = () => {
 
           {/* About Description */}
 
-          <div className='text-gray-400 space-y-4'>
-            <p className='animate-fade-in animation-delay-400'>I believe technology should solve real problems, not just exist as code. I build scalable, user-focused systems with a strong foundation in software engineering principles and a curiosity for AI-driven innovation.</p>
+          <div className='text-gray-400 space-y-4 animate-fade-in animation-delay-400'>
+            <p>I believe technology should solve real problems, not just exist as code. I build scalable, user-focused systems with a strong foundation in software engineering principles and a curiosity for AI-driven innovation.</p>
             <p>As a software engineering enthusiast, I focus on building reliable back-end architectures and AI-powered solutions that solve meaningful problems. I value clean design, thoughtful system architecture, and continuous learning.</p>
           </div>
 
@@ -68,7 +81,18 @@ const About = () => {
 
           {/* right column */}
 
-          
+          <div className='grid sm:grid-cols-3 gap-6 md:w-300'>
+            {highlights.map((item, index) => (
+              <div key={index} className='glass border-2 p-6 md:m-5 animate-fade-in hover:scale-105 transition-transform duration-300 hover:bg-[#CBFE00]/10 hover:border-[#CBFE00]' style={{animationDelay: `${(index+1)*100}ms`}}>
+                <div className='text-[#CBFE00] p-3 h-12 w-12 mb-5 rounded-full bg-[#CBFE00]/20'>
+                  <item.icon className='w-6 h-6' />
+                </div>
+                <h3 className="text-[#CBFE00] font-bold text-lg">{item.title}</h3>
+                <p className="text-gray-400 text-sm">{item.description}</p>
+              </div>))}
+              
+
+          </div>
         </div>
       </div>
     </section>

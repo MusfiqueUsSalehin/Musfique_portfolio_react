@@ -220,9 +220,9 @@ const Hero = () => {
 
       {/* --- SCROLL INDICATOR --- */}
       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-1 opacity-80 hover:opacity-100 transition-opacity duration-300">
-        <a href="#" className='flex flex-col items-center'>
+        <a href="#about" className='flex flex-col items-center'>
             <span className="text-[10px] uppercase tracking-[0.2em] text-[#849443] font-electrolize animate-pulse">
-              Initialize
+              Scroll Down
             </span>
             <Mouse className="w-6 h-6 text-[#CBFE00]" />
             <ChevronDown className="w-4 h-4 text-[#849443] animate-bounce" />
