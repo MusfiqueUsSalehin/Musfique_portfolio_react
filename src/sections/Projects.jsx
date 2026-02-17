@@ -69,8 +69,8 @@ const Projects = () => {
                         urlEndpoint={urlEndpoint}
                         path={project.image}// The name of the file in ImageKit
                         transformation={[{
-                          height: 650, // Fetch a reasonably sized image, not the full 4k original
-                          width: 500,
+                          height: 1000, // Fetch a reasonably sized image, not the full 4k original
+                          width: 2000,
                           quality: 80, // Reduces file size without visible loss
                         }]}
                         lqip={{ active: true }} // Optional: Shows a blurred placeholder while loading

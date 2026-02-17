@@ -76,7 +76,7 @@ const Hero = () => {
                 
               </h1 >
 
-              <h1 className="font-black text-5xl md:text-6xl lg:text-[8rem] tracking-tighter uppercase opacity-70 hover:opacity-100 transition-opacity duration-300"
+              <h1 className="font-black text-5xl md:text-6xl lg:text-[8rem] tracking-tighter uppercase opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-default"
               style={{
                 WebkitTextStroke: '1px #444', 
                 color: 'transparent'
@@ -116,8 +116,8 @@ const Hero = () => {
                 {[
                   {icon: Github, href: "https://github.com/MusfiqueUsSalehin"},
                   {icon: Linkedin, href: "https://www.linkedin.com/in/musfique-us-salehin/"},
-                  {icon: Facebook, href: "#"},
-                  {icon: Instagram, href: "#"}
+                  {icon: Facebook, href: "https://www.facebook.com/musfiqueusalehin.musfiqueussalehin/"},
+                  {icon: Instagram, href: "https://www.instagram.com/salehin_isti/"}
                 ].map((social, index) => (
                   <div key={index} className="hover:scale-150 transition-transform duration-200">
                     <a key={index} href={social.href} target="_blank" rel="noopener noreferrer">

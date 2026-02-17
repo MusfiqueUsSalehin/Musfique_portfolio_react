@@ -2,6 +2,38 @@ import { Brain, Code2, Layers, Lightbulb, RefreshCw, Rocket, ShieldCheck, Users,
 import React from 'react'
 
 
+const education = [
+  {
+    degree: 'Bachelor of Science in Computer Science and Engineering',
+    institution: 'BRAC University',
+    location: 'Dhaka, Bangladesh',
+    year: '2022 - present',
+    description: 'Pursuing a Bachelor of Science in Computer Science and Engineering with understanding of core CS, software engineering and AI/ML concepts and practical application.',
+    current: true
+  },
+
+  {
+    degree: 'Higher School Certificate',
+    institution: 'Govt. Hazi Muhammad Mohsin College',
+    location: 'Chattogram, Bangladesh',
+    year: '2019 - 2020',
+    description: 'Completed Higher School Certificate with a strong foundation in science, mathematics,   physics and chemistry.',
+    current: false
+  },
+
+  {
+    degree: 'Secondary School Certificate',
+    institution: 'Ispahani Public School & College',
+    location: 'Chattogram, Bangladesh',
+    year: '2005 - 2018',
+    description: 'Completed Secondary School Certificate with a strong foundation in science subjects.',
+    current: false
+  },
+
+
+]
+
+
 
 const highlights= [
     {
@@ -93,6 +125,56 @@ const About = () => {
               
 
           </div>
+        </div>
+
+        <div>
+          <div className='text-2xl font-electrolize mt-20 mb-10  text-center text-[#adc93e] tracking-widest'><span className='p-3 border-[#849443] border-b animate-pulse'>system_upgrades_log</span></div>
+        </div>
+
+
+        {/* Timeline */}
+
+        <div className='relative mt-25'>
+          <div className='timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#CBFE00] to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(203,254,0,0.5)]'/>
+
+          {/* Experinece items */}
+
+          <div className='space-y-12'>
+            {education.map((edu, index) => (
+              <div key={index} className='relative grid md:grid-cols-2 animate-fade-in'
+                style={{animationDelay: `${(index+1)*100}ms`}}
+              >
+
+                {/* timeline dots */}
+                <div className='absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-[#CBFE00] -translate-x-1/2 -translate-y-1/2 ring-4 ring-[#CBFE00]/20 z-10'>
+
+                {edu.current && (
+                  <span className='absolute inset-0 w-3 h-3 bg-[#CBFE00] rounded-full animate-ping opacity-100'></span>
+                )}
+
+                </div>
+
+                {/* content */}
+                <div className={`pl-8 md:pl-0 
+                  ${index%2===0 ? 
+                      'md:pe-16 md:text-right' 
+                      : 'md:col-start-2 md:pl-16'}`
+                  }> 
+                  <div className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/70 transition-all duration-500`}>
+                    <span className='text-[#CBFE00] font-electrolize'>{edu.year}</span>
+                    <h3 className='text-white font-bold text-xl pt-6 pb-1'>{edu.degree}</h3>
+                    <p className='text-[#849443] font-bold'>{edu.institution}</p>
+                    <p className='text-[#5e6f24] text-sm pb-4'>{edu.location}</p>
+                    <p className='text-gray-400'>{edu.description}</p>
+
+                  </div>
+                </div>
+              </div>
+
+            ))}
+
+          </div>
+
         </div>
       </div>
     </section>
