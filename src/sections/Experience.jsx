@@ -72,7 +72,7 @@ const Experience = () => {
                         <p className='text-[#849443] font-bold pb-4'>{experience.company}</p>
                         <p className='text-gray-400'>{experience.description}</p>
 
-                        <div className='pt-4'>
+                        <div className='pt-4 flex flex-wrap gap-2'>
                           {experience.skills && experience.skills.map((skill, index) => (
                             <span key={index} className='text-[#CBFE00] bg-[#1a1c0c] border border-[#CBFE00] px-3 py-1 rounded-full mr-2 mb-2 text-sm'>
                               {skill}
