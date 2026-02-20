@@ -1,8 +1,9 @@
-import { AlertCircle, CheckCircle, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { AlertCircle, CheckCircle, Mail, MapPin, Phone, Scroll, Send } from 'lucide-react'
 import React from 'react'
 import Button from '../components/Button'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import ScrollReveal from '../components/ScrollReveal'
 
 const contactMethods = [
   {
@@ -171,6 +172,7 @@ const Contact = () => {
               {/* contact info  */}
               <div className='space-y-6 mt-8 animate-fade-in animation-delay-500'>
                 {contactMethods.map((method, index) => (
+                  <ScrollReveal key={index}>
                   <a  href={method.href} key={index} className='flex items-center gap-4 p-4 bg-[#212121] border border-[#2a2a2a] hover:bg-[#2a2a2a] transition-colors duration-300 animate-fade-in rounded-md'
                   style={{animationDelay: `${(index+1)*200}ms`}}
                   >
@@ -180,6 +182,7 @@ const Contact = () => {
                       <p className='text-lg text-white font-medium'>{method.value}</p>
                     </div>
                   </a>
+                  </ScrollReveal>
                 ))}
 
                 {/* ... inside the form or just after it ... */}

@@ -117,7 +117,7 @@ const About = () => {
 
           <div className='grid sm:grid-cols-3 gap-6 md:w-300'>
             {highlights.map((item, index) => (
-              <div key={index} className='glass border-2 p-6 md:m-5 animate-fade-in hover:scale-105 transition-transform duration-300 hover:bg-[#CBFE00]/10 hover:border-[#CBFE00]' style={{animationDelay: `${(index+1)*100}ms`}}>
+              <div key={index} className='glass border-2 p-6 md:m-5 animate-fade-in hover:scale-105 transition-transform duration-300 hover:bg-[#CBFE00]/10 hover:border-[#CBFE00]' style={{animationDelay: `${(index+1)*200}ms`}}>
                 <div className='text-[#CBFE00] p-3 h-12 w-12 mb-5 rounded-full bg-[#CBFE00]/20'>
                   <item.icon className='w-6 h-6' />
                 </div>
