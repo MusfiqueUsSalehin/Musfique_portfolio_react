@@ -8,8 +8,9 @@ const NavLinks = [
   { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#experiences', label: 'Experiences' },
+  { href: '#Research', label: 'Research' },
   { href: '#Eca', label: 'ECAs' },
-  { href: '#testimonials', label: 'Testimonials' },
+  
 ]
 
 function Navbar() {
@@ -53,9 +54,14 @@ function Navbar() {
 
       {/* CTA button */}
       <div className='hidden md:block'>
-        <Button>Contact Me</Button>
-
-      </div>
+          <a 
+            href="#contact" 
+            className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-[#CBFE00]/10 border border-[#CBFE00]/30 rounded-full font-electrolize font-bold text-sm text-[#CBFE00] hover:bg-[#CBFE00] hover:text-black hover:border-[#CBFE00] transition-all duration-300 hover:shadow-[0_0_20px_rgba(203,254,0,0.4)]"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#CBFE00] group-hover:bg-black animate-pulse transition-colors duration-300" />
+            INITIATE_CONTACT
+          </a>
+        </div>
       
 
       {/* Mobile Menu Button */}
@@ -69,7 +75,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isMobOpen && (
-      <div className='md:hidden glass-strong animate-fade-in'>
+      <div className='absolute top-[110%] left-0 right-0 mt-2md:hidden glass-strong animate-fade-in'>
         <div className='container mx-auto px-6 py-6 flex flex-col gap-4'>
           {NavLinks.map((link, index) => (
               <a key={index} href={link.href}
@@ -79,7 +85,14 @@ function Navbar() {
               </a>
             ))}
 
-            <Button>Contact Me</Button>
+            <a 
+              href="#contact" 
+              onClick={() => setisMobOpen(false)}
+              className="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-[#CBFE00]/10 border border-[#CBFE00]/50 rounded-xl font-electrolize font-bold text-[#CBFE00] hover:bg-[#CBFE00] hover:text-black transition-all duration-300 active:scale-95"
+            >
+               <span className="w-2 h-2 rounded-full bg-[#CBFE00] animate-pulse" />
+               INITIATE_CONTACT
+            </a>
 
         </div>
 

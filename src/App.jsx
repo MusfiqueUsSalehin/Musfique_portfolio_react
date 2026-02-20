@@ -3,6 +3,7 @@ import About from "./sections/About"
 import Contact from "./sections/Contact"
 import Eca from "./sections/Eca"
 import Experience from "./sections/Experience"
+import Footer from "./sections/Footer"
 import Hero from "./sections/Hero"
 import Projects from "./sections/Projects"
 import Testimonials from "./sections/Testimonials"
@@ -22,6 +23,7 @@ function App() {
         <Eca/>
         <Testimonials/>
         <Contact/>
+        <Footer/>
       </main>
       
     </div>

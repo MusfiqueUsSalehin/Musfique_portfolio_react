@@ -119,7 +119,7 @@ const About = () => {
                 <div className='text-[#CBFE00] p-3 h-12 w-12 mb-5 rounded-full bg-[#CBFE00]/20'>
                   <item.icon className='w-6 h-6' />
                 </div>
-                <h3 className="text-[#CBFE00] font-bold text-lg">{item.title}</h3>
+                <h3 className="text-[#CBFE00] font-bold font-electrolize text-lg">{item.title}</h3>
                 <p className="text-gray-400 text-sm">{item.description}</p>
               </div>))}
               

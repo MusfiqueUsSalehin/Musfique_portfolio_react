@@ -34,12 +34,30 @@ const Hero = () => {
     { name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" }, // Note: Vercel dark logo might blend with dark bg, usually inverted is needed
   ];
 
+
+  const handleCV = () => {
+    // Path to your file in the public folder
+    const fileUrl = '/Musfique_CVR.pdf';
+    window.open(fileUrl, 'noopener,noreferrer'); 
+    
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.target = '_blank'; // Opens the PDF in a new tab to view
+    link.download = 'Musfique_Us_Salehin_CV.pdf'; // Suggests a filename for download
+    
+    // Append, click, and remove the link
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className='relative min-h-screen flex items-center overflow-hidden '>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {dots.map((dot) => (
           <div
-            key={dot.id} // 2. Always provide a unique key
+            key={dot.id} // Always provide a unique key
             className="absolute w-1.5 h-1.5 rounded-full opacity-60 blur-[3px]"
             style={{
               backgroundColor: "#849443",
@@ -104,9 +122,9 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300 justify-center md:justify-start">
               
-              <AnimatedBorderButton>
+              <AnimatedBorderButton onClick={handleCV}>
                 <Download className="w-5 h-5" />
-                Download CV
+                Get Resume
               </AnimatedBorderButton>
               <div className="hidden md:block h-12 w-1 bg-[#CBFE00] relative"/>
                     
@@ -152,7 +170,7 @@ const Hero = () => {
                 />
 
                 {/* --- SCANNING EFFECT OVERLAY --- */}
-                <div className="absolute inset-x-0 h-10 bg-gradient-to-b from-transparent via-[#CBFE00]/30 to-transparent animate-scan z-20 pointer-events-none" />
+                <div className="absolute inset-x-0 h-5 bg-gradient-to-b from-transparent via-[#CBFE00]/30 to-transparent animate-scan z-20 pointer-events-none" />
                 
                 {/* Optional: Static Scanlines texture for extra detail */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,11,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-20 bg-[length:100%_4px,6px_100%] pointer-events-none opacity-20" />

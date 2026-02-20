@@ -10,23 +10,6 @@ const experiences = [
     current: true
     },
 
-    {
-    period: '2023 - Present',
-    role: 'Rider Service Agent , Operations',
-    company: 'Foodpanda, Bangladesh',
-    description: 'Conducting quality checks, outbound calls, hiring leads, fraud detection and providing feedback to ensuring a seamless experience for riders and customers.',
-    skills: ['Communication', 'Problem Solving', 'Data Analysis','Teamwork'],
-    current: true
-    },
-
-    {
-    period: '2023 - Present',
-    role: 'Rider Service Agent, Operations',
-    company: 'Foodpanda, Bangladesh',
-    description: 'Conducting quality checks, outbound calls, hiring leads, fraud detection and providing feedback to ensuring a seamless experience for riders and customers.',
-    skills: ['Communication', 'Problem Solving', 'Data Analysis','Teamwork'],
-    current: true
-    },
 ]
 
 const Experience = () => {
