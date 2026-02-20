@@ -1,3 +1,4 @@
+import ScrollReveal from "./components/ScrollReveal"
 import Navbar from "./layout/Navbar"
 import About from "./sections/About"
 import Contact from "./sections/Contact"
@@ -22,7 +23,9 @@ function App() {
         <Experience/>
         <Eca/>
         <Testimonials/>
-        <Contact/>
+        <ScrollReveal>
+          <Contact/>
+        </ScrollReveal>
         <Footer/>
       </main>
       

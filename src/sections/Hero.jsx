@@ -137,7 +137,7 @@ const Hero = () => {
                   {icon: Facebook, href: "https://www.facebook.com/musfiqueusalehin.musfiqueussalehin/"},
                   {icon: Instagram, href: "https://www.instagram.com/salehin_isti/"}
                 ].map((social, index) => (
-                  <div key={index} className="hover:scale-150 transition-transform duration-200">
+                  <div key={index} className="hover:scale-150 active:scale-150 transition-transform duration-200">
                     <a key={index} href={social.href} target="_blank" rel="noopener noreferrer">
                       {<social.icon className="w-7 h-7 text-gray-400 hover:text-[#CBFE00] transition-colors duration-200" />}
                     </a>
@@ -226,7 +226,7 @@ const Hero = () => {
                       className="w-10 h-10 object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110"
                     />
                   </div>
-                  <span className="text-xs font-electrolize text-gray-500 group-hover:text-[#CBFE00] transition-colors duration-300 uppercase tracking-wider">
+                  <span className="text-xs font-electrolize text-[#CBFE00] md:text-gray-500 md:group-hover:text-[#CBFE00] transition-colors duration-300 uppercase tracking-wider">
                     {skill.name}
                   </span>
                 </div>

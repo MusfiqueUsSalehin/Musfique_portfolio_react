@@ -1,4 +1,6 @@
+import { Scroll } from 'lucide-react'
 import React from 'react'
+import ScrollReveal from '../components/ScrollReveal'
 
 const experiences = [
   {
@@ -44,8 +46,9 @@ const Experience = () => {
 
               <div className='space-y-12'>
                 {experiences.map((experience, index) => (
+                  <ScrollReveal key={index}>
                   <div key={index} className='relative grid md:grid-cols-2 animate-fade-in'
-                    style={{animationDelay: `${(index+1)*100}ms`}}
+                    style={{animationDelay: `${(index+1)*200}ms`}}
                   >
 
                     {/* timeline dots */}
@@ -79,6 +82,8 @@ const Experience = () => {
                       </div>
                     </div>
                   </div>
+
+                  </ScrollReveal>
 
                 ))}
 

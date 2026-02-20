@@ -101,20 +101,20 @@ const Contact = () => {
             <div className='text-center'>
   
               <div className='space-y-8 mb-15'>
-                <div className='animate-fade-in'>
+                <div className='animate-fade-in animation-delay-400'>
                   <span className='text-xl md:text-5xl glass border-3  p-5 text-[#CBFE00] font-electrolize animate-pulse'>COMMUNICATION GATEWAY</span>
                 </div> 
               </div>
 
-              <h2 className='text-2xl md:text-3xl font-electrolize font-bold text-white leading-tight animate-fade-in animation-delay-200'><span className='text-[#849443]'> Listening on all open ports.</span> Ready to synchronize.
+              <h2 className='text-2xl md:text-3xl font-electrolize font-bold text-white leading-tight animate-fade-in animation-delay-400'><span className='text-[#849443]'> Listening on all open ports.</span> Ready to synchronize.
               </h2>
-              <p className='text-gray-400 mt-4 max-w-5xl mx-auto animate-fade-in animation-delay-400'>
+              <p className='text-gray-400 mt-4 max-w-5xl mx-auto animate-fade-in animation-delay-500'>
                 A progressive log of escalating privileges and responsibilities. Elevating from local execution to enterprise-wide orchestration.
               </p>
             </div>
 
             <div className='grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto'>
-              <div className='glass p-8 mt-8 border-primary/30 animate-fade-in animation-delay-300'>
+              <div className='glass p-8 mt-8 border-primary/30 animate-fade-in animation-delay-500'>
                 <form className='space-y-6 font-electrolize' onSubmit={handleSubmit}>
 
                   <div>
@@ -171,7 +171,9 @@ const Contact = () => {
               {/* contact info  */}
               <div className='space-y-6 mt-8 animate-fade-in animation-delay-500'>
                 {contactMethods.map((method, index) => (
-                  <a  href={method .href} key={index} className='flex items-center gap-4 p-4 bg-[#212121] border border-[#2a2a2a] hover:bg-[#2a2a2a] transition-colors duration-300'>
+                  <a  href={method.href} key={index} className='flex items-center gap-4 p-4 bg-[#212121] border border-[#2a2a2a] hover:bg-[#2a2a2a] transition-colors duration-300 animate-fade-in rounded-md'
+                  style={{animationDelay: `${(index+1)*200}ms`}}
+                  >
                     <method.icon className='w-6 h-6 text-[#CBFE00]' />
                     <div>
                       <p className='text-sm text-gray-400 font-electrolize'>{method.label}</p>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { IKImage } from 'imagekitio-react'
-import { ArrowRight, ArrowUpRight, Github, LucideAArrowUp, LucideLink } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github, LucideAArrowUp, LucideLink, Scroll } from 'lucide-react';
 import { AnimatedBorderButton } from '../components/AnimatedBorderButton.jsx'
+import ScrollReveal from '../components/ScrollReveal.jsx';
 
 const projects = [
   {
@@ -57,11 +58,12 @@ const Projects = () => {
             </div>
 
             {/* Projects Grid */}
+            <ScrollReveal>
             <div className='mt-16 grid md:grid-cols-3 gap-12'>
               {projects.map((project, index) => (
                 <div key={index} 
                 className='group glass border-2 rounded-2xl overflow-hidden animate-fade-in md:row-span-1'
-                style={{animationDelay: `${(index+1)*100}ms`}}
+                style={{animationDelay: `${(index+1)*200}ms`}}
                 >
                   {/* Images */}
                   <div className='relative overflow-hidden aspect-video'>
@@ -82,7 +84,7 @@ const Projects = () => {
 
 
                       {/* overlay links */}
-                      <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                      <div className='absolute inset-0 flex items-center justify-center opacity-0 group-active:opacity-100 group-hover:opacity-100 transition-opacity duration-300'>
                         <div className='flex space-x-4'>
                           <a href={project.link} className='bg-[#CBFE00] text-black px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition-colors duration-300' target="_blank" rel="noopener noreferrer">
                             View Project <LucideLink className='inline-block ml-1' />
@@ -120,6 +122,8 @@ const Projects = () => {
 
 
             </div>
+
+            </ScrollReveal>
 
             {/* view All CTA */}
             <div className='flex justify-center mt-16 animate-fade-in animation-delay-600'>

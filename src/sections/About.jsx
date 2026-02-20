@@ -1,5 +1,6 @@
-import { Brain, Code2, Layers, Lightbulb, RefreshCw, Rocket, ShieldCheck, Users, Zap } from 'lucide-react'
+import { Brain, Code2, Layers, Lightbulb, RefreshCw, Rocket, Scroll, ShieldCheck, Users, Zap } from 'lucide-react'
 import React from 'react'
+import ScrollReveal from '../components/ScrollReveal'
 
 
 const education = [
@@ -112,6 +113,7 @@ const About = () => {
           </div>
 
           {/* right column */}
+          <ScrollReveal>
 
           <div className='grid sm:grid-cols-3 gap-6 md:w-300'>
             {highlights.map((item, index) => (
@@ -125,6 +127,7 @@ const About = () => {
               
 
           </div>
+          </ScrollReveal>
         </div>
 
         <div>
@@ -141,6 +144,7 @@ const About = () => {
 
           <div className='space-y-12'>
             {education.map((edu, index) => (
+              <ScrollReveal key={index}>
               <div key={index} className='relative grid md:grid-cols-2 animate-fade-in'
                 style={{animationDelay: `${(index+1)*100}ms`}}
               >
@@ -170,6 +174,8 @@ const About = () => {
                   </div>
                 </div>
               </div>
+
+              </ScrollReveal>
 
             ))}
 
