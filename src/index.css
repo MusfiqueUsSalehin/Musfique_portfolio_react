@@ -34,6 +34,9 @@
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     caret-color: transparent;
+
+    padding-left: 1.5rem;  /* Equivalent to Tailwind's px-6 */
+    padding-right: 1.5rem;
   }
 }
 
