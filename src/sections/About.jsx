@@ -18,7 +18,7 @@ const education = [
     institution: 'Govt. Hazi Muhammad Mohsin College',
     location: 'Chattogram, Bangladesh',
     year: '2019 - 2020',
-    description: 'Completed Higher School Certificate with a strong foundation in science, mathematics,   physics and chemistry.',
+    description: 'Completed Higher School Certificate with a strong foundation in mathematics,   physics and chemistry.',
     current: false
   },
 
