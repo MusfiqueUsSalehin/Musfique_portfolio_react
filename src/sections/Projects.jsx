@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: 'TaskLynx',
-    description: 'A brief description of Project Two, highlighting its features and technologies used.',
+    description: 'TaskLynx is a dual-panel React frontend application designed to streamline the workflow between Admins and Employees based on Localstorage data. Built as a deep dive into React’s ecosystem, the system focuses on real-time task tracking and role-based access control using LocalStorage.',
     image: '/Porfolio project images/Screenshot 2026-02-14 040928.png', // Placeholder image URL
     tags: ['React.js', 'Tailwind CSS'],
     link: 'https://task-lynx.vercel.app/',
