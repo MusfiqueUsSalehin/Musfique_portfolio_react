@@ -3,6 +3,8 @@ import React from 'react'
 import ScrollReveal from '../components/ScrollReveal'
 
 
+
+
 const education = [
   {
     degree: 'Bachelor of Science in Computer Science and Engineering',
