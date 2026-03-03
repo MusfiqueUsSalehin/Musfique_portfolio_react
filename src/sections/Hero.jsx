@@ -37,7 +37,7 @@ const Hero = () => {
 
   const handleCV = () => {
     // Path to your file in the public folder
-    const fileUrl = './Musfique_CVR.pdf';
+    const fileUrl = '/Musfique_CVR.pdf';
     window.open(fileUrl, 'noopener,noreferrer'); 
     
     // Create a temporary anchor element
