@@ -35,21 +35,33 @@ const Hero = () => {
   ];
 
 
-  const handleCV = () => {
-    // Path to your file in the public folder
-    const fileUrl = '/Musfique_CVR.pdf';
-    window.open(fileUrl, 'noopener,noreferrer'); 
-    
-    // Create a temporary anchor element
-    const link = document.createElement('a');
-    link.href = fileUrl;
-    link.target = '_blank'; // Opens the PDF in a new tab to view
-    link.download = 'Musfique_Us_Salehin_CV.pdf'; // Suggests a filename for download
-    
-    // Append, click, and remove the link
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleCV = async () => {
+    try {
+      // Fetch the file from your public folder
+      const response = await fetch('/Musfique_CVR.pdf');
+      
+      //Convert the response into a raw data Blob
+      const blob = await response.blob();
+      
+      //  local object URL for the Blob
+      const blobUrl = window.URL.createObjectURL(blob);
+      
+      // anchor link and trigger the download
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = 'Musfique_Us_Salehin_CV.pdf'; // Your clean file name
+      
+      document.body.appendChild(link);
+      link.click();
+      
+      //Clean up the DOM and memory
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+      
+    } catch (error) {
+      console.error("Failed to download the CV:", error);
+      //Add an alert here if you want to notify the user
+    }
   };
 
   return (
