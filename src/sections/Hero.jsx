@@ -90,7 +90,7 @@ const Hero = () => {
             {/*NameShow*/}
             <div>
               <h1 className="text-white font-black text-5xl md:text-7xl lg:text-[8.5rem] tracking-tighter hover:scale-105 transition-transform duration-500 cursor-default">
-                MUSFIUQUE
+                MUSFIQUE
                 
               </h1 >
 
