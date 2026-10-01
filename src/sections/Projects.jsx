@@ -7,6 +7,16 @@ import ScrollReveal from '../components/ScrollReveal.jsx';
 // Flattened Project Data
 const projects = [
   {
+    title: 'Dhaka Tesla Pool',
+    description: 'A high-concurrency ride-pooling MVP solving seat overbooking race conditions using PostgreSQL pessimistic row locking (SELECT FOR UPDATE) and state machine mechanics.',
+    image: '/Porfolio project images/image.png', 
+    tags: ['Node.js', 'PostgreSQL', 'Docker', 'Knex.js', 'React 19', 'Vitest'],
+    link: 'https://dhaka-tesla-pool-i4yp.onrender.com/', 
+    github: 'https://github.com/MusfiqueUsSalehin/Dhaka-TeslaPool', 
+    category: 'Backend Systems'
+  },
+
+  {
     title: 'PetOn',
     description: 'A full-stack pet session booking platform built with MERN stack. Allows users to browse available pets, book sessions, and manage profiles.',
     image: '/Porfolio project images/Screenshot 2026-01-25 040042.png',
