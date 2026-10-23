@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal'
 
 const experiences = [
   {
-    period: '2023 - Present',
+    period: '2024 - Present',
     role: 'Rider Service Agent, Operations',
     company: 'Foodpanda,Bangladesh',
     description: 'Conducting quality checks, outbound calls, hiring leads, fraud detection and providing feedback to ensuring a seamless experience for riders and customers.',
