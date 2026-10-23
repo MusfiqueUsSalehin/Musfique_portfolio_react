@@ -35,6 +35,11 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     caret-color: transparent;
   }
+
+    ::selection {
+    background: #CBFE00;
+    color: #050505;
+  }
 }
 
 
@@ -62,6 +67,19 @@
     box-shadow: 0 0 20px
         color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+
+    .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(203, 254, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(203, 254, 0, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .hero-glow {
+    background: radial-gradient(circle, rgba(203, 254, 0, 0.12) 0%, transparent 65%);
   }
 }
 
@@ -190,4 +208,19 @@
         color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
+}
+
+/* Acid-green scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb {
+  background: #3b470d;
+  border-radius: 9999px;
+  border: 2px solid #050505;
+}
+::-webkit-scrollbar-thumb:hover { background: #CBFE00; }
+
+/* Firefox fallback */
+@supports not selector(::-webkit-scrollbar) {
+  html { scrollbar-width: thin; scrollbar-color: #849443 #050505; }
 }

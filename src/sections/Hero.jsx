@@ -1,20 +1,17 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import Button from '../components/Button.jsx'
 import { AnimatedBorderButton } from '../components/AnimatedBorderButton.jsx'
 import { Mouse,ChevronDown, Download, Github, Linkedin, Facebook, Instagram } from 'lucide-react'
 import { IKImage } from 'imagekitio-react';
+import NetworkBackground from '../components/NetworkBackground.jsx'
 
 const Hero = () => {
   // 1. Generate the dot data once and "freeze" it in memory
-  const dots = useMemo(() => {
-    return [...Array(30)].map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      duration: 15 + Math.random() * 20,
-      delay: Math.random() * 5,
-    }));
-  }, []); // Empty dependency array means "only run this once"
+    const handleGlow = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+  };
 
   const urlEndpoint = "https://ik.imagekit.io/pft5wq5du";
 
@@ -58,20 +55,10 @@ const Hero = () => {
 
   return (
     <section className='relative min-h-screen flex items-center overflow-hidden '>
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {dots.map((dot) => (
-          <div
-            key={dot.id} // Always provide a unique key
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60 blur-[3px]"
-            style={{
-              backgroundColor: "#849443",
-              left: dot.left,
-              top: dot.top,
-              animation: `slow-drift ${dot.duration}s ease-in-out infinite`,
-              animationDelay: `${dot.delay}s`,
-            }}
-          />
-        ))}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="hero-grid absolute inset-0" />
+        <div className="hero-glow absolute top-1/2 right-[-15%] w-[700px] h-[700px] -translate-y-1/2" />
+        <NetworkBackground />
       </div>
 
 
@@ -156,7 +143,7 @@ const Hero = () => {
           <div className='relative animate-fade-in animation-delay-200'>
             {/*profile Image*/}
             <div className='relative max-w-md mx-auto'>
-              <div className='relative glass rounded-3xl p-2 glow-border overflow-hidden'>
+              <div className='group relative glass rounded-3xl p-2 glow-border overflow-hidden' onMouseMove={handleGlow}>
                 
                 {/* 2. Replace the standard <img> with <IKImage> */}
                 <IKImage
@@ -178,6 +165,11 @@ const Hero = () => {
                 
                 {/* Optional: Static Scanlines texture for extra detail */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,11,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-20 bg-[length:100%_4px,6px_100%] pointer-events-none opacity-20" />
+                                {/* Cursor-following glow */}
+                <div
+                  className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: 'radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgba(203,254,0,0.18), transparent 60%)' }}
+                />
 
                 
 
